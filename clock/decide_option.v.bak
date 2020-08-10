@@ -1,0 +1,19 @@
+module decide_option(
+	input rst_n,//复位信号
+	input select_option,//按键0(key0)用来决定手动调时时候是调秒、分钟还是小时�?
+	output reg [1:0] option//option等于0表示调秒、等�?表示调分、等�?表示等于调小�?
+);
+
+always @ (select_option or rst_n) begin
+	if(!rst_n) begin
+		option <= 2'd0;
+	end
+	else begin
+		if(option == 2'd2)
+			option <= 0;
+		else 
+			option <= option + 1'b1;
+	end
+end
+
+endmodule

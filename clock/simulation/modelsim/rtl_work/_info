@@ -1,0 +1,316 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/software/hhhhh/simulation/modelsim
+T_opt
+!s110 1577421666
+VbZX:o7LJ<LQe0gPDiV[NT0
+04 17 4 work clockTest_vlg_tst fast 0
+=1-b025aa23e28d-5e058b62-1d5-12e8
+o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work +acc
+n@_opt
+OL;O;10.4;61
+valarm_clocking
+Z1 !s110 1577421663
+!i10b 1
+!s100 8V@I`C]C7VheBFKAC12CP1
+IjLJ@EDDmC0_QBe5G5ZSzS1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1577102136
+8D:/software/hhhhh/alarm_clocking.v
+FD:/software/hhhhh/alarm_clocking.v
+L0 1
+Z3 OL;L;10.4;61
+r1
+!s85 0
+31
+!s108 1577421663.332000
+!s107 D:/software/hhhhh/alarm_clocking.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/software/hhhhh|D:/software/hhhhh/alarm_clocking.v|
+!i113 0
+Z4 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z5 !s92 -vlog01compat -work work +incdir+D:/software/hhhhh -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+vclockTest
+R1
+!i10b 1
+!s100 d>2QCCg03QXeWOP42RYe[2
+IP]dBWnObQX6<4To?6BY<B1
+R2
+R0
+w1577327670
+8D:/software/hhhhh/clockTest.v
+FD:/software/hhhhh/clockTest.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1577421663.520000
+!s107 D:/software/hhhhh/clockTest.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/software/hhhhh|D:/software/hhhhh/clockTest.v|
+!i113 0
+R4
+R5
+nclock@test
+vclockTest_vlg_tst
+Z6 !s110 1577421665
+!i10b 1
+!s100 W9H9kWXg615N7P;DFN53z0
+If0=f@gi=V[m=P1j@=LWHB2
+R2
+R0
+w1577421553
+8D:/software/hhhhh/simulation/modelsim/clockTest.vt
+FD:/software/hhhhh/simulation/modelsim/clockTest.vt
+L0 27
+R3
+r1
+!s85 0
+31
+!s108 1577421665.449000
+!s107 D:/software/hhhhh/simulation/modelsim/clockTest.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/software/hhhhh/simulation/modelsim|D:/software/hhhhh/simulation/modelsim/clockTest.vt|
+!i113 0
+R4
+!s92 -vlog01compat -work work +incdir+D:/software/hhhhh/simulation/modelsim -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+nclock@test_vlg_tst
+vcount
+R6
+!i10b 1
+!s100 ObXY5KG>_iOYKR><nC?PC0
+I=kY:3da2f56UfH:a0_JI=2
+R2
+R0
+w1577327247
+8D:/software/hhhhh/count.v
+FD:/software/hhhhh/count.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1577421665.127000
+!s107 D:/software/hhhhh/count.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/software/hhhhh|D:/software/hhhhh/count.v|
+!i113 0
+R4
+R5
+vdecide_option
+R1
+!i10b 1
+!s100 mc=4R2hcJ]cdmWl>1edeL3
+ISQXGU]hF_nB@iSo`G^PlJ3
+R2
+R0
+w1577186013
+8D:/software/hhhhh/decide_option.v
+FD:/software/hhhhh/decide_option.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1577421663.678000
+!s107 D:/software/hhhhh/decide_option.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/software/hhhhh|D:/software/hhhhh/decide_option.v|
+!i113 0
+R4
+R5
+vfenPIN
+R1
+!i10b 1
+!s100 ag[LiedLIU3j2en0Sj@f51
+IA1V3_B<IF@UWSQS3W:5@_1
+R2
+R0
+w1577349921
+8D:/software/hhhhh/fenPIN.v
+FD:/software/hhhhh/fenPIN.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1577421663.850000
+!s107 D:/software/hhhhh/fenPIN.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/software/hhhhh|D:/software/hhhhh/fenPIN.v|
+!i113 0
+R4
+R5
+nfen@p@i@n
+vhour_alarm
+Z7 !s110 1577421664
+!i10b 1
+!s100 Vl_THS8DAGHPi`TD[BQ;70
+I2?>0A8JIYSAT^A1U7[Ch`2
+R2
+R0
+w1576757917
+8D:/software/hhhhh/hour_alarm.v
+FD:/software/hhhhh/hour_alarm.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1577421664.028000
+!s107 D:/software/hhhhh/hour_alarm.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/software/hhhhh|D:/software/hhhhh/hour_alarm.v|
+!i113 0
+R4
+R5
+vinitialSW
+R6
+!i10b 1
+!s100 =aeOX_PAh<N^;>24Qec_P3
+IRU>LU5;@9DCKnV9]bWING0
+R2
+R0
+w1199204548
+8D:/software/hhhhh/initialSW.v
+FD:/software/hhhhh/initialSW.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1577421665.287000
+!s107 D:/software/hhhhh/initialSW.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/software/hhhhh|D:/software/hhhhh/initialSW.v|
+!i113 0
+R4
+R5
+ninitial@s@w
+vkey_debounce
+R7
+!i10b 1
+!s100 m1jl;Y@6a00jZ1Umo9GcB2
+I6SRP0^PG89eADol1z:W4Q3
+R2
+R0
+w1577186014
+8D:/software/hhhhh/key_debounce.v
+FD:/software/hhhhh/key_debounce.v
+L0 8
+R3
+r1
+!s85 0
+31
+!s108 1577421664.968000
+!s107 D:/software/hhhhh/key_debounce.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/software/hhhhh|D:/software/hhhhh/key_debounce.v|
+!i113 0
+R4
+R5
+vmanual_clocking
+R7
+!i10b 1
+!s100 Y34ZV8g[:BRWDJz^J17]:2
+I0H7UWZ?5LP:E4XkC<5ahJ3
+R2
+R0
+w1577186252
+8D:/software/hhhhh/manual_clocking.v
+FD:/software/hhhhh/manual_clocking.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1577421664.178000
+!s107 D:/software/hhhhh/manual_clocking.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/software/hhhhh|D:/software/hhhhh/manual_clocking.v|
+!i113 0
+R4
+R5
+vself_clocking
+R7
+!i10b 1
+!s100 <691b`g2LKh7JV]BAC:kW3
+ITWEEJNce]4AooXWigKnX[3
+R2
+R0
+w1577101618
+8D:/software/hhhhh/self_clocking.v
+FD:/software/hhhhh/self_clocking.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1577421664.332000
+!s107 D:/software/hhhhh/self_clocking.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/software/hhhhh|D:/software/hhhhh/self_clocking.v|
+!i113 0
+R4
+R5
+vset_alarm
+R7
+!i10b 1
+!s100 b4Jdh]8kfczGN0H:AO3@c0
+IhLK3>[=iMd^67fzTdChmz0
+R2
+R0
+w1577370003
+8D:/software/hhhhh/set_alarm.v
+FD:/software/hhhhh/set_alarm.v
+L0 4
+R3
+r1
+!s85 0
+31
+!s108 1577421664.502000
+!s107 D:/software/hhhhh/set_alarm.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/software/hhhhh|D:/software/hhhhh/set_alarm.v|
+!i113 0
+R4
+R5
+vset_final_time
+R7
+!i10b 1
+!s100 :iaW]Fdci8h>44:T9l]4m3
+IFNgQDWYn?6E?=ddADfY5_3
+R2
+R0
+w1577327818
+8D:/software/hhhhh/set_final_time.v
+FD:/software/hhhhh/set_final_time.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1577421664.645000
+!s107 D:/software/hhhhh/set_final_time.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/software/hhhhh|D:/software/hhhhh/set_final_time.v|
+!i113 0
+R4
+R5
+vshow
+R7
+!i10b 1
+!s100 <mzd8zkN0LQRn<J52o8Aj2
+ICzYL:1HXFX81i6@nFSmBG1
+R2
+R0
+w1576757604
+8D:/software/hhhhh/show.v
+FD:/software/hhhhh/show.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1577421664.816000
+!s107 D:/software/hhhhh/show.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/software/hhhhh|D:/software/hhhhh/show.v|
+!i113 0
+R4
+R5

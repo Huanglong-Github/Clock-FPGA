@@ -1,0 +1,176 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 24.008 ns
+From           : rst_n
+To             : sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|acq_data_in_reg[30]
+From Clock     : --
+To Clock       : auto_stp_external_clock_0
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 116.581 ns
+From           : set_alarm:u_set_alarm|alarm_hourH[1]
+To             : digital_tube_4[4]
+From Clock     : select_option
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 33.485 ns
+From           : rst_n
+To             : digital_tube_4[4]
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 69.883 ns
+From           : rst_n
+To             : set_alarm:u_set_alarm|alarm_hourH[0]
+From Clock     : --
+To Clock       : select_option
+Failed Paths   : 0
+
+Type           : Clock Setup: 'select_option'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 10.19 MHz ( period = 98.164 ns )
+From           : set_alarm:u_set_alarm|alarm_hourH[1]
+To             : set_alarm:u_set_alarm|alarm_secL[1]
+From Clock     : select_option
+To Clock       : select_option
+Failed Paths   : 0
+
+Type           : Clock Setup: 'sw_0'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 10.24 MHz ( period = 97.634 ns )
+From           : set_alarm:u_set_alarm|alarm_hourH[1]
+To             : set_alarm:u_set_alarm|alarm_secL[1]
+From Clock     : sw_0
+To Clock       : sw_0
+Failed Paths   : 0
+
+Type           : Clock Setup: 'sw_1'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 10.26 MHz ( period = 97.450 ns )
+From           : set_alarm:u_set_alarm|alarm_hourH[1]
+To             : set_alarm:u_set_alarm|alarm_hourL[2]
+From Clock     : sw_1
+To Clock       : sw_1
+Failed Paths   : 0
+
+Type           : Clock Setup: 'rst_n'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 17.21 MHz ( period = 58.120 ns )
+From           : set_alarm:u_set_alarm|alarm_hourH[1]
+To             : set_alarm:u_set_alarm|alarm_hourH[0]
+From Clock     : rst_n
+To Clock       : rst_n
+Failed Paths   : 0
+
+Type           : Clock Setup: 'altera_internal_jtag~TCKUTAP'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 87.20 MHz ( period = 11.468 ns )
+From           : sld_hub:sld_hub_inst|node_ena[1]~reg0
+To             : sld_hub:sld_hub_inst|tdo
+From Clock     : altera_internal_jtag~TCKUTAP
+To Clock       : altera_internal_jtag~TCKUTAP
+Failed Paths   : 0
+
+Type           : Clock Setup: 'add_time'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 101.03 MHz ( period = 9.898 ns )
+From           : manual_clocking:u_manual_clocking|manual_minH[1]
+To             : alarm_clocking:u_alarm_clocking|alarm_led
+From Clock     : add_time
+To Clock       : add_time
+Failed Paths   : 0
+
+Type           : Clock Setup: 'auto_stp_external_clock_0'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 140.49 MHz ( period = 7.118 ns )
+From           : sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|counter[0]
+To             : sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[5]
+From Clock     : auto_stp_external_clock_0
+To Clock       : auto_stp_external_clock_0
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 159.52 MHz ( period = 6.269 ns )
+From           : self_clocking:u_self_clocking|self_minH[0]
+To             : hour_alarm:u_hour_alarm|hour_led
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Clock Hold: 'sw_1'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : set_alarm:u_set_alarm|alarm_hourL[2]
+To             : set_alarm:u_set_alarm|alarm_hourH[0]
+From Clock     : sw_1
+To Clock       : sw_1
+Failed Paths   : 261
+
+Type           : Clock Hold: 'sw_0'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : set_alarm:u_set_alarm|alarm_hourL[2]
+To             : set_alarm:u_set_alarm|alarm_hourH[0]
+From Clock     : sw_0
+To Clock       : sw_0
+Failed Paths   : 261
+
+Type           : Clock Hold: 'select_option'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : set_alarm:u_set_alarm|alarm_hourH[0]
+To             : set_alarm:u_set_alarm|alarm_hourH[1]
+From Clock     : select_option
+To Clock       : select_option
+Failed Paths   : 290
+
+Type           : Clock Hold: 'rst_n'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : set_alarm:u_set_alarm|alarm_hourH[0]
+To             : set_alarm:u_set_alarm|alarm_hourH[1]
+From Clock     : rst_n
+To Clock       : rst_n
+Failed Paths   : 128
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 940
+
+--------------------------------------------------------------------------------------
+

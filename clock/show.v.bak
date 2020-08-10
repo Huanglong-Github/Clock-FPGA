@@ -1,0 +1,97 @@
+module show(
+	input sw0, //拨动开�?,用于标记是手动调时间还是自动计时：为1自动计时，为0手动调时�?
+	input sw1, //拨动开�?，用于标记是手动调时间还是手动调闹钟:�?手动调时，为0设置闹钟
+	
+	input rst_n,//复位信号
+	
+	input wire [3:0] secL,//最终的秒的个位
+	input wire [3:0] secH,//最终的秒的十位
+	input wire [3:0] minL,//最终的分的个位
+	input wire [3:0] minH,//最终的分的十位
+	input wire [3:0] hourL,//最终的时的个位
+	input wire [3:9] hourH,//最终的时的十位
+	
+	output reg [7:0] digital_tube_1,//输出电子数码�?
+	output reg [7:0] digital_tube_2,//输出电子数码�?
+	output reg [7:0] digital_tube_3,//输出电子数码�?
+	output reg [7:0] digital_tube_4,//输出电子数码�?
+	
+	output reg led0,//led1的输出端�?
+	output reg led1//led0的输出端�?
+);
+
+always @ (secL or rst_n) begin
+	if(!rst_n)
+		led0 <= 1'b0;//led0初始化状态为灭灯
+	else	
+		led0 <= ~led0;//led0开始闪烁，这里其实是两秒有一次闪�?
+end
+always @ (secH or rst_n) begin
+	if(!rst_n)
+		led1 <= 1'b0;//led0初始化状态为灭灯
+	else	
+		led1 <= ~led1;//led0开始闪烁，这里其实是两秒有一次闪�?
+end
+
+always @ (minL or rst_n) begin
+	case(minL)
+		4'b0000:digital_tube_1<=8'b1100_0000;//0
+		4'b0001:digital_tube_1<=8'b1111_1001;//1
+		4'b0010:digital_tube_1<=8'b1010_0100;//2
+		4'b0011:digital_tube_1<=8'b1011_0000;//3
+		4'b0100:digital_tube_1<=8'b1001_1001;//4
+		4'b0101:digital_tube_1<=8'b1001_0010;//5
+		4'b0110:digital_tube_1<=8'b1000_0010;//6
+		4'b0111:digital_tube_1<=8'b1111_1000;//7
+		4'b1000:digital_tube_1<=8'b1000_0000;//8
+		4'b1001:digital_tube_1<=8'b1001_0000;//9
+	default:digital_tube_1<=8'b1100_0000;
+	endcase
+end
+always @ (minH or rst_n) begin
+	case(minH)
+		4'b0000:digital_tube_2<=8'b1100_0000;//0
+		4'b0001:digital_tube_2<=8'b1111_1001;//1
+		4'b0010:digital_tube_2<=8'b1010_0100;//2
+		4'b0011:digital_tube_2<=8'b1011_0000;//3
+		4'b0100:digital_tube_2<=8'b1001_1001;//4
+		4'b0101:digital_tube_2<=8'b1001_0010;//5
+		4'b0110:digital_tube_2<=8'b1000_0010;//6
+		4'b0111:digital_tube_2<=8'b1111_1000;//7
+		4'b1000:digital_tube_2<=8'b1000_0000;//8
+		4'b1001:digital_tube_2<=8'b1001_0000;//9
+	default:digital_tube_2<=8'b1100_0000;
+	endcase
+end
+always @ (hourL or rst_n) begin
+	case(hourL)
+		4'b0000:digital_tube_3<=8'b1100_0000;//0
+		4'b0001:digital_tube_3<=8'b1111_1001;//1
+		4'b0010:digital_tube_3<=8'b1010_0100;//2
+		4'b0011:digital_tube_3<=8'b1011_0000;//3
+		4'b0100:digital_tube_3<=8'b1001_1001;//4
+		4'b0101:digital_tube_3<=8'b1001_0010;//5
+		4'b0110:digital_tube_3<=8'b1000_0010;//6
+		4'b0111:digital_tube_3<=8'b1111_1000;//7
+		4'b1000:digital_tube_3<=8'b1000_0000;//8
+		4'b1001:digital_tube_3<=8'b1001_0000;//9
+	default:digital_tube_3<=8'b1100_0000;
+	endcase
+end
+always @ (hourH or rst_n) begin
+	case(hourH)
+		4'b0000:digital_tube_4<=8'b1100_0000;//0
+		4'b0001:digital_tube_4<=8'b1111_1001;//1
+		4'b0010:digital_tube_4<=8'b1010_0100;//2
+		4'b0011:digital_tube_4<=8'b1011_0000;//3
+		4'b0100:digital_tube_4<=8'b1001_1001;//4
+		4'b0101:digital_tube_4<=8'b1001_0010;//5
+		4'b0110:digital_tube_4<=8'b1000_0010;//6
+		4'b0111:digital_tube_4<=8'b1111_1000;//7
+		4'b1000:digital_tube_4<=8'b1000_0000;//8
+		4'b1001:digital_tube_4<=8'b1001_0000;//9
+	default:digital_tube_4<=8'b1100_0000;
+	endcase
+end
+
+endmodule

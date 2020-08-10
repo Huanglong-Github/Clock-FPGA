@@ -1,0 +1,905 @@
+Analysis & Synthesis report for clockTest
+Fri Dec 27 12:39:45 2019
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. User-Specified and Inferred Latches
+ 10. Logic Cells Representing Combinational Loops
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
+ 17. SignalTap II Logic Analyzer Settings
+ 18. Elapsed Time Per Partition
+ 19. Connections to In-System Debugging Instance "auto_signaltap_0"
+ 20. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                          ;
++------------------------------------+--------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Dec 27 12:39:45 2019            ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name                      ; clockTest                                        ;
+; Top-level Entity Name              ; clockTest                                        ;
+; Family                             ; Cyclone II                                       ;
+; Total logic elements               ; 1,346                                            ;
+;     Total combinational functions  ; 847                                              ;
+;     Dedicated logic registers      ; 950                                              ;
+; Total registers                    ; 950                                              ;
+; Total pins                         ; 45                                               ;
+; Total virtual pins                 ; 0                                                ;
+; Total memory bits                  ; 5,376                                            ;
+; Embedded Multiplier 9-bit elements ; 0                                                ;
+; Total PLLs                         ; 0                                                ;
++------------------------------------+--------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C35F672C8       ;                    ;
+; Top-level entity name                                                      ; clockTest          ; clockTest          ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; Off                ; Off                ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                 ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                             ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------+---------+
+; alarm_clocking.v                 ; yes             ; User Verilog HDL File        ; D:/software/hhhhh/alarm_clocking.v                                                       ;         ;
+; clockTest.v                      ; yes             ; User Verilog HDL File        ; D:/software/hhhhh/clockTest.v                                                            ;         ;
+; decide_option.v                  ; yes             ; User Verilog HDL File        ; D:/software/hhhhh/decide_option.v                                                        ;         ;
+; fenPIN.v                         ; yes             ; User Verilog HDL File        ; D:/software/hhhhh/fenPIN.v                                                               ;         ;
+; hour_alarm.v                     ; yes             ; User Verilog HDL File        ; D:/software/hhhhh/hour_alarm.v                                                           ;         ;
+; manual_clocking.v                ; yes             ; User Verilog HDL File        ; D:/software/hhhhh/manual_clocking.v                                                      ;         ;
+; self_clocking.v                  ; yes             ; User Verilog HDL File        ; D:/software/hhhhh/self_clocking.v                                                        ;         ;
+; set_alarm.v                      ; yes             ; User Verilog HDL File        ; D:/software/hhhhh/set_alarm.v                                                            ;         ;
+; set_final_time.v                 ; yes             ; User Verilog HDL File        ; D:/software/hhhhh/set_final_time.v                                                       ;         ;
+; show.v                           ; yes             ; User Verilog HDL File        ; D:/software/hhhhh/show.v                                                                 ;         ;
+; key_debounce.v                   ; yes             ; User Verilog HDL File        ; D:/software/hhhhh/key_debounce.v                                                         ;         ;
+; count.v                          ; yes             ; User Verilog HDL File        ; D:/software/hhhhh/count.v                                                                ;         ;
+; sld_signaltap.vhd                ; yes             ; Megafunction                 ; d:/software/quartus/install/quartus/libraries/megafunctions/sld_signaltap.vhd            ;         ;
+; sld_signaltap_impl.vhd           ; yes             ; Encrypted Megafunction       ; d:/software/quartus/install/quartus/libraries/megafunctions/sld_signaltap_impl.vhd       ;         ;
+; sld_ela_control.vhd              ; yes             ; Encrypted Megafunction       ; d:/software/quartus/install/quartus/libraries/megafunctions/sld_ela_control.vhd          ;         ;
+; lpm_shiftreg.tdf                 ; yes             ; Megafunction                 ; d:/software/quartus/install/quartus/libraries/megafunctions/lpm_shiftreg.tdf             ;         ;
+; lpm_constant.inc                 ; yes             ; Megafunction                 ; d:/software/quartus/install/quartus/libraries/megafunctions/lpm_constant.inc             ;         ;
+; dffeea.inc                       ; yes             ; Megafunction                 ; d:/software/quartus/install/quartus/libraries/megafunctions/dffeea.inc                   ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                 ; d:/software/quartus/install/quartus/libraries/megafunctions/aglobal130.inc               ;         ;
+; sld_mbpmg.vhd                    ; yes             ; Encrypted Megafunction       ; d:/software/quartus/install/quartus/libraries/megafunctions/sld_mbpmg.vhd                ;         ;
+; sld_ela_trigger_flow_mgr.vhd     ; yes             ; Encrypted Megafunction       ; d:/software/quartus/install/quartus/libraries/megafunctions/sld_ela_trigger_flow_mgr.vhd ;         ;
+; sld_buffer_manager.vhd           ; yes             ; Encrypted Megafunction       ; d:/software/quartus/install/quartus/libraries/megafunctions/sld_buffer_manager.vhd       ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; d:/software/quartus/install/quartus/libraries/megafunctions/altsyncram.tdf               ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; d:/software/quartus/install/quartus/libraries/megafunctions/stratix_ram_block.inc        ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; d:/software/quartus/install/quartus/libraries/megafunctions/lpm_mux.inc                  ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; d:/software/quartus/install/quartus/libraries/megafunctions/lpm_decode.inc               ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; d:/software/quartus/install/quartus/libraries/megafunctions/a_rdenreg.inc                ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; d:/software/quartus/install/quartus/libraries/megafunctions/altrom.inc                   ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; d:/software/quartus/install/quartus/libraries/megafunctions/altram.inc                   ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; d:/software/quartus/install/quartus/libraries/megafunctions/altdpram.inc                 ;         ;
+; db/altsyncram_qp14.tdf           ; yes             ; Auto-Generated Megafunction  ; D:/software/hhhhh/db/altsyncram_qp14.tdf                                                 ;         ;
+; altdpram.tdf                     ; yes             ; Megafunction                 ; d:/software/quartus/install/quartus/libraries/megafunctions/altdpram.tdf                 ;         ;
+; memmodes.inc                     ; yes             ; Megafunction                 ; d:/software/quartus/install/quartus/libraries/others/maxplus2/memmodes.inc               ;         ;
+; a_hdffe.inc                      ; yes             ; Megafunction                 ; d:/software/quartus/install/quartus/libraries/megafunctions/a_hdffe.inc                  ;         ;
+; alt_le_rden_reg.inc              ; yes             ; Megafunction                 ; d:/software/quartus/install/quartus/libraries/megafunctions/alt_le_rden_reg.inc          ;         ;
+; altsyncram.inc                   ; yes             ; Megafunction                 ; d:/software/quartus/install/quartus/libraries/megafunctions/altsyncram.inc               ;         ;
+; lpm_mux.tdf                      ; yes             ; Megafunction                 ; d:/software/quartus/install/quartus/libraries/megafunctions/lpm_mux.tdf                  ;         ;
+; muxlut.inc                       ; yes             ; Megafunction                 ; d:/software/quartus/install/quartus/libraries/megafunctions/muxlut.inc                   ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; d:/software/quartus/install/quartus/libraries/megafunctions/bypassff.inc                 ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; d:/software/quartus/install/quartus/libraries/megafunctions/altshift.inc                 ;         ;
+; db/mux_aoc.tdf                   ; yes             ; Auto-Generated Megafunction  ; D:/software/hhhhh/db/mux_aoc.tdf                                                         ;         ;
+; lpm_decode.tdf                   ; yes             ; Megafunction                 ; d:/software/quartus/install/quartus/libraries/megafunctions/lpm_decode.tdf               ;         ;
+; declut.inc                       ; yes             ; Megafunction                 ; d:/software/quartus/install/quartus/libraries/megafunctions/declut.inc                   ;         ;
+; lpm_compare.inc                  ; yes             ; Megafunction                 ; d:/software/quartus/install/quartus/libraries/megafunctions/lpm_compare.inc              ;         ;
+; db/decode_rqf.tdf                ; yes             ; Auto-Generated Megafunction  ; D:/software/hhhhh/db/decode_rqf.tdf                                                      ;         ;
+; lpm_counter.tdf                  ; yes             ; Megafunction                 ; d:/software/quartus/install/quartus/libraries/megafunctions/lpm_counter.tdf              ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; d:/software/quartus/install/quartus/libraries/megafunctions/lpm_add_sub.inc              ;         ;
+; cmpconst.inc                     ; yes             ; Megafunction                 ; d:/software/quartus/install/quartus/libraries/megafunctions/cmpconst.inc                 ;         ;
+; lpm_counter.inc                  ; yes             ; Megafunction                 ; d:/software/quartus/install/quartus/libraries/megafunctions/lpm_counter.inc              ;         ;
+; alt_counter_stratix.inc          ; yes             ; Megafunction                 ; d:/software/quartus/install/quartus/libraries/megafunctions/alt_counter_stratix.inc      ;         ;
+; db/cntr_ubi.tdf                  ; yes             ; Auto-Generated Megafunction  ; D:/software/hhhhh/db/cntr_ubi.tdf                                                        ;         ;
+; db/cmpr_acc.tdf                  ; yes             ; Auto-Generated Megafunction  ; D:/software/hhhhh/db/cmpr_acc.tdf                                                        ;         ;
+; db/cntr_02j.tdf                  ; yes             ; Auto-Generated Megafunction  ; D:/software/hhhhh/db/cntr_02j.tdf                                                        ;         ;
+; db/cntr_sbi.tdf                  ; yes             ; Auto-Generated Megafunction  ; D:/software/hhhhh/db/cntr_sbi.tdf                                                        ;         ;
+; db/cmpr_8cc.tdf                  ; yes             ; Auto-Generated Megafunction  ; D:/software/hhhhh/db/cmpr_8cc.tdf                                                        ;         ;
+; db/cntr_gui.tdf                  ; yes             ; Auto-Generated Megafunction  ; D:/software/hhhhh/db/cntr_gui.tdf                                                        ;         ;
+; db/cmpr_5cc.tdf                  ; yes             ; Auto-Generated Megafunction  ; D:/software/hhhhh/db/cmpr_5cc.tdf                                                        ;         ;
+; sld_rom_sr.vhd                   ; yes             ; Encrypted Megafunction       ; d:/software/quartus/install/quartus/libraries/megafunctions/sld_rom_sr.vhd               ;         ;
+; sld_hub.vhd                      ; yes             ; Encrypted Megafunction       ; d:/software/quartus/install/quartus/libraries/megafunctions/sld_hub.vhd                  ;         ;
+; sld_jtag_hub.vhd                 ; yes             ; Encrypted Megafunction       ; d:/software/quartus/install/quartus/libraries/megafunctions/sld_jtag_hub.vhd             ;         ;
+; D:/software/hhhhh/initialSW.v    ; yes             ; User Verilog HDL File        ; D:/software/hhhhh/initialSW.v                                                            ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                             ;
++---------------------------------------------+---------------------------+
+; Resource                                    ; Usage                     ;
++---------------------------------------------+---------------------------+
+; Estimated Total logic elements              ; 1,346                     ;
+;                                             ;                           ;
+; Total combinational functions               ; 847                       ;
+; Logic element usage by number of LUT inputs ;                           ;
+;     -- 4 input functions                    ; 484                       ;
+;     -- 3 input functions                    ; 158                       ;
+;     -- <=2 input functions                  ; 205                       ;
+;                                             ;                           ;
+; Logic elements by mode                      ;                           ;
+;     -- normal mode                          ; 736                       ;
+;     -- arithmetic mode                      ; 111                       ;
+;                                             ;                           ;
+; Total registers                             ; 950                       ;
+;     -- Dedicated logic registers            ; 950                       ;
+;     -- I/O registers                        ; 0                         ;
+;                                             ;                           ;
+; I/O pins                                    ; 45                        ;
+; Total memory bits                           ; 5376                      ;
+; Embedded Multiplier 9-bit elements          ; 0                         ;
+; Maximum fan-out node                        ; auto_stp_external_clock_0 ;
+; Maximum fan-out                             ; 478                       ;
+; Total fan-out                               ; 6467                      ;
+; Average fan-out                             ; 3.42                      ;
++---------------------------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ;
++---------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                                                                              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                             ; Library Name ;
++---------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |clockTest                                                                                              ; 847 (3)           ; 950 (0)      ; 5376        ; 0            ; 0       ; 0         ; 45   ; 0            ; |clockTest                                                                                                                                                                                                                                                                                                                                      ; work         ;
+;    |alarm_clocking:u_alarm_clocking|                                                                    ; 23 (23)           ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|alarm_clocking:u_alarm_clocking                                                                                                                                                                                                                                                                                                      ; work         ;
+;    |count:u_count|                                                                                      ; 34 (34)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|count:u_count                                                                                                                                                                                                                                                                                                                        ; work         ;
+;    |decide_option:u_decide_option|                                                                      ; 33 (2)            ; 25 (2)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|decide_option:u_decide_option                                                                                                                                                                                                                                                                                                        ; work         ;
+;       |key_debounce:u_key_debounce|                                                                     ; 31 (31)           ; 23 (23)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|decide_option:u_decide_option|key_debounce:u_key_debounce                                                                                                                                                                                                                                                                            ; work         ;
+;    |fenPIN:u_fenPIN|                                                                                    ; 37 (37)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|fenPIN:u_fenPIN                                                                                                                                                                                                                                                                                                                      ; work         ;
+;    |hour_alarm:u_hour_alarm|                                                                            ; 10 (10)           ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|hour_alarm:u_hour_alarm                                                                                                                                                                                                                                                                                                              ; work         ;
+;    |manual_clocking:u_manual_clocking|                                                                  ; 64 (34)           ; 44 (22)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|manual_clocking:u_manual_clocking                                                                                                                                                                                                                                                                                                    ; work         ;
+;       |key_debounce:u_key_debounce|                                                                     ; 30 (30)           ; 22 (22)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|manual_clocking:u_manual_clocking|key_debounce:u_key_debounce                                                                                                                                                                                                                                                                        ; work         ;
+;    |self_clocking:u_self_clocking|                                                                      ; 61 (61)           ; 22 (22)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|self_clocking:u_self_clocking                                                                                                                                                                                                                                                                                                        ; work         ;
+;    |set_alarm:u_set_alarm|                                                                              ; 37 (36)           ; 23 (22)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|set_alarm:u_set_alarm                                                                                                                                                                                                                                                                                                                ; work         ;
+;       |key_debounce:u_key_debounce|                                                                     ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|set_alarm:u_set_alarm|key_debounce:u_key_debounce                                                                                                                                                                                                                                                                                    ; work         ;
+;    |set_final_time:u_set_final_time|                                                                    ; 50 (50)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|set_final_time:u_set_final_time                                                                                                                                                                                                                                                                                                      ; work         ;
+;    |show:u_show|                                                                                        ; 34 (34)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|show:u_show                                                                                                                                                                                                                                                                                                                          ; work         ;
+;    |sld_hub:auto_hub|                                                                                   ; 121 (1)           ; 86 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                     ; work         ;
+;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                                                    ; 120 (82)          ; 86 (58)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                                                                                                                                                                                        ; work         ;
+;          |sld_rom_sr:hub_info_reg|                                                                      ; 21 (21)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg                                                                                                                                                                                                                                                ; work         ;
+;          |sld_shadow_jsm:shadow_jsm|                                                                    ; 17 (17)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_shadow_jsm:shadow_jsm                                                                                                                                                                                                                                              ; work         ;
+;    |sld_signaltap:auto_signaltap_0|                                                                     ; 340 (1)           ; 716 (84)     ; 5376        ; 0            ; 0       ; 0         ; 1    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0                                                                                                                                                                                                                                                                                                       ; work         ;
+;       |sld_signaltap_impl:sld_signaltap_body|                                                           ; 339 (0)           ; 632 (0)      ; 5376        ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body                                                                                                                                                                                                                                                                 ; work         ;
+;          |sld_signaltap_implb:sld_signaltap_body|                                                       ; 339 (20)          ; 632 (194)    ; 5376        ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body                                                                                                                                                                                                                          ; work         ;
+;             |altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|                            ; 17 (0)            ; 46 (46)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem                                                                                                                                                           ; work         ;
+;                |lpm_decode:wdecoder|                                                                    ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_decode:wdecoder                                                                                                                                       ; work         ;
+;                   |decode_rqf:auto_generated|                                                           ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_decode:wdecoder|decode_rqf:auto_generated                                                                                                             ; work         ;
+;                |lpm_mux:mux|                                                                            ; 15 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_mux:mux                                                                                                                                               ; work         ;
+;                   |mux_aoc:auto_generated|                                                              ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_mux:mux|mux_aoc:auto_generated                                                                                                                        ; work         ;
+;             |altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|                                           ; 0 (0)             ; 0 (0)        ; 5376        ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram                                                                                                                                                                          ; work         ;
+;                |altsyncram_qp14:auto_generated|                                                         ; 0 (0)             ; 0 (0)        ; 5376        ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_qp14:auto_generated                                                                                                                                           ; work         ;
+;             |lpm_shiftreg:segment_offset_config_deserialize|                                            ; 0 (0)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|lpm_shiftreg:segment_offset_config_deserialize                                                                                                                                                                           ; work         ;
+;             |lpm_shiftreg:status_register|                                                              ; 17 (17)           ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|lpm_shiftreg:status_register                                                                                                                                                                                             ; work         ;
+;             |sld_buffer_manager:sld_buffer_manager_inst|                                                ; 59 (59)           ; 44 (44)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst                                                                                                                                                                               ; work         ;
+;             |sld_ela_control:ela_control|                                                               ; 100 (1)           ; 226 (1)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control                                                                                                                                                                                              ; work         ;
+;                |lpm_shiftreg:trigger_config_deserialize|                                                ; 0 (0)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|lpm_shiftreg:trigger_config_deserialize                                                                                                                                                      ; work         ;
+;                |sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm| ; 84 (0)            ; 210 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm                                                                                                       ; work         ;
+;                   |lpm_shiftreg:trigger_condition_deserialize|                                          ; 0 (0)             ; 126 (126)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|lpm_shiftreg:trigger_condition_deserialize                                                            ; work         ;
+;                   |sld_mbpmg:\trigger_modules_gen:0:trigger_match|                                      ; 84 (0)            ; 84 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match                                                        ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:0:sm1|                            ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:0:sm1  ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:10:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:10:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:11:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:11:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:12:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:12:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:13:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:13:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:14:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:14:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:15:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:15:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:16:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:16:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:17:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:17:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:18:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:18:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:19:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:19:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:1:sm1|                            ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:1:sm1  ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:20:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:20:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:21:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:21:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:22:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:22:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:23:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:23:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:24:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:24:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:25:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:25:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:26:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:26:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:27:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:27:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:28:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:28:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:29:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:29:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:2:sm1|                            ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:2:sm1  ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:30:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:30:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:31:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:31:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:32:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:32:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:33:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:33:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:34:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:34:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:35:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:35:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:36:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:36:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:37:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:37:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:38:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:38:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:39:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:39:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:3:sm1|                            ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:3:sm1  ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:40:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:40:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:41:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:41:sm1 ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:4:sm1|                            ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:4:sm1  ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:5:sm1|                            ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:5:sm1  ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:6:sm1|                            ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:6:sm1  ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:7:sm1|                            ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:7:sm1  ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:8:sm1|                            ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:8:sm1  ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:9:sm1|                            ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:9:sm1  ; work         ;
+;                |sld_ela_trigger_flow_mgr:\builtin:ela_trigger_flow_mgr_entity|                          ; 15 (15)           ; 11 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger_flow_mgr:\builtin:ela_trigger_flow_mgr_entity                                                                                                                                ; work         ;
+;                   |lpm_shiftreg:trigger_config_deserialize|                                             ; 0 (0)             ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger_flow_mgr:\builtin:ela_trigger_flow_mgr_entity|lpm_shiftreg:trigger_config_deserialize                                                                                        ; work         ;
+;             |sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|          ; 106 (10)          ; 90 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst                                                                                                                                         ; work         ;
+;                |lpm_counter:\adv_point_3_and_more:advance_pointer_counter|                              ; 8 (0)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:\adv_point_3_and_more:advance_pointer_counter                                                                               ; work         ;
+;                   |cntr_ubi:auto_generated|                                                             ; 8 (8)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:\adv_point_3_and_more:advance_pointer_counter|cntr_ubi:auto_generated                                                       ; work         ;
+;                |lpm_counter:read_pointer_counter|                                                       ; 7 (0)             ; 7 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:read_pointer_counter                                                                                                        ; work         ;
+;                   |cntr_02j:auto_generated|                                                             ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:read_pointer_counter|cntr_02j:auto_generated                                                                                ; work         ;
+;                |lpm_counter:status_advance_pointer_counter|                                             ; 6 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_advance_pointer_counter                                                                                              ; work         ;
+;                   |cntr_sbi:auto_generated|                                                             ; 6 (6)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_advance_pointer_counter|cntr_sbi:auto_generated                                                                      ; work         ;
+;                |lpm_counter:status_read_pointer_counter|                                                ; 3 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_read_pointer_counter                                                                                                 ; work         ;
+;                   |cntr_gui:auto_generated|                                                             ; 3 (3)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_read_pointer_counter|cntr_gui:auto_generated                                                                         ; work         ;
+;                |lpm_shiftreg:info_data_shift_out|                                                       ; 15 (15)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:info_data_shift_out                                                                                                        ; work         ;
+;                |lpm_shiftreg:ram_data_shift_out|                                                        ; 42 (42)           ; 42 (42)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:ram_data_shift_out                                                                                                         ; work         ;
+;                |lpm_shiftreg:status_data_shift_out|                                                     ; 15 (15)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:status_data_shift_out                                                                                                      ; work         ;
+;             |sld_rom_sr:crc_rom_sr|                                                                     ; 20 (20)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |clockTest|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_rom_sr:crc_rom_sr                                                                                                                                                                                                    ; work         ;
++---------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                                                          ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                                                                                                                                                  ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_qp14:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 128          ; 42           ; 128          ; 42           ; 5376 ; None ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                   ;
++-----------------------------------------------------+------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal    ; Free of Timing Hazards ;
++-----------------------------------------------------+------------------------+------------------------+
+; count:u_count|sec_4[0]                              ; count:u_count|sec_4[3] ; yes                    ;
+; count:u_count|sec_4[1]                              ; count:u_count|sec_4[3] ; yes                    ;
+; count:u_count|sec_4[2]                              ; count:u_count|sec_4[3] ; yes                    ;
+; count:u_count|sec_4[3]                              ; count:u_count|sec_4[3] ; yes                    ;
+; count:u_count|sec_3[0]                              ; count:u_count|sec_3[3] ; yes                    ;
+; count:u_count|sec_3[1]                              ; count:u_count|sec_3[3] ; yes                    ;
+; count:u_count|sec_3[2]                              ; count:u_count|sec_3[3] ; yes                    ;
+; count:u_count|sec_3[3]                              ; count:u_count|sec_3[3] ; yes                    ;
+; count:u_count|sec_2[0]                              ; count:u_count|sec_2[3] ; yes                    ;
+; count:u_count|sec_2[1]                              ; count:u_count|sec_2[3] ; yes                    ;
+; count:u_count|sec_2[2]                              ; count:u_count|sec_2[3] ; yes                    ;
+; count:u_count|sec_2[3]                              ; count:u_count|sec_2[3] ; yes                    ;
+; count:u_count|sec_1[0]                              ; sw2                    ; yes                    ;
+; count:u_count|sec_1[1]                              ; sw2                    ; yes                    ;
+; count:u_count|sec_1[2]                              ; sw2                    ; yes                    ;
+; count:u_count|sec_1[3]                              ; sw2                    ; yes                    ;
+; set_final_time:u_set_final_time|secL[0]             ; VCC                    ; yes                    ;
+; set_final_time:u_set_final_time|secL[1]             ; VCC                    ; yes                    ;
+; set_final_time:u_set_final_time|secL[2]             ; VCC                    ; yes                    ;
+; set_final_time:u_set_final_time|secL[3]             ; VCC                    ; yes                    ;
+; set_final_time:u_set_final_time|secH[0]             ; VCC                    ; yes                    ;
+; set_final_time:u_set_final_time|secH[1]             ; VCC                    ; yes                    ;
+; set_final_time:u_set_final_time|secH[2]             ; VCC                    ; yes                    ;
+; set_final_time:u_set_final_time|secH[3]             ; VCC                    ; yes                    ;
+; Number of user-specified and inferred latches = 24  ;                        ;                        ;
++-----------------------------------------------------+------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops               ;
++--------------------------------------------------------+---+
+; Logic Cell Name                                        ;   ;
++--------------------------------------------------------+---+
+; show:u_show|led0                                       ;   ;
+; show:u_show|led1                                       ;   ;
+; Number of logic cells representing combinational loops ; 2 ;
++--------------------------------------------------------+---+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                              ;
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+; Register name                                                         ; Reason for Removal                                                                      ;
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+; manual_clocking:u_manual_clocking|key_debounce:u_key_debounce|key_reg ; Merged with set_alarm:u_set_alarm|key_debounce:u_key_debounce|key_reg                   ;
+; set_alarm:u_set_alarm|key_debounce:u_key_debounce|key_flag            ; Merged with manual_clocking:u_manual_clocking|key_debounce:u_key_debounce|key_flag      ;
+; set_alarm:u_set_alarm|key_debounce:u_key_debounce|delay_cnt[19]       ; Merged with manual_clocking:u_manual_clocking|key_debounce:u_key_debounce|delay_cnt[19] ;
+; set_alarm:u_set_alarm|key_debounce:u_key_debounce|delay_cnt[18]       ; Merged with manual_clocking:u_manual_clocking|key_debounce:u_key_debounce|delay_cnt[18] ;
+; set_alarm:u_set_alarm|key_debounce:u_key_debounce|delay_cnt[17]       ; Merged with manual_clocking:u_manual_clocking|key_debounce:u_key_debounce|delay_cnt[17] ;
+; set_alarm:u_set_alarm|key_debounce:u_key_debounce|delay_cnt[16]       ; Merged with manual_clocking:u_manual_clocking|key_debounce:u_key_debounce|delay_cnt[16] ;
+; set_alarm:u_set_alarm|key_debounce:u_key_debounce|delay_cnt[15]       ; Merged with manual_clocking:u_manual_clocking|key_debounce:u_key_debounce|delay_cnt[15] ;
+; set_alarm:u_set_alarm|key_debounce:u_key_debounce|delay_cnt[14]       ; Merged with manual_clocking:u_manual_clocking|key_debounce:u_key_debounce|delay_cnt[14] ;
+; set_alarm:u_set_alarm|key_debounce:u_key_debounce|delay_cnt[13]       ; Merged with manual_clocking:u_manual_clocking|key_debounce:u_key_debounce|delay_cnt[13] ;
+; set_alarm:u_set_alarm|key_debounce:u_key_debounce|delay_cnt[12]       ; Merged with manual_clocking:u_manual_clocking|key_debounce:u_key_debounce|delay_cnt[12] ;
+; set_alarm:u_set_alarm|key_debounce:u_key_debounce|delay_cnt[11]       ; Merged with manual_clocking:u_manual_clocking|key_debounce:u_key_debounce|delay_cnt[11] ;
+; set_alarm:u_set_alarm|key_debounce:u_key_debounce|delay_cnt[10]       ; Merged with manual_clocking:u_manual_clocking|key_debounce:u_key_debounce|delay_cnt[10] ;
+; set_alarm:u_set_alarm|key_debounce:u_key_debounce|delay_cnt[9]        ; Merged with manual_clocking:u_manual_clocking|key_debounce:u_key_debounce|delay_cnt[9]  ;
+; set_alarm:u_set_alarm|key_debounce:u_key_debounce|delay_cnt[8]        ; Merged with manual_clocking:u_manual_clocking|key_debounce:u_key_debounce|delay_cnt[8]  ;
+; set_alarm:u_set_alarm|key_debounce:u_key_debounce|delay_cnt[7]        ; Merged with manual_clocking:u_manual_clocking|key_debounce:u_key_debounce|delay_cnt[7]  ;
+; set_alarm:u_set_alarm|key_debounce:u_key_debounce|delay_cnt[6]        ; Merged with manual_clocking:u_manual_clocking|key_debounce:u_key_debounce|delay_cnt[6]  ;
+; set_alarm:u_set_alarm|key_debounce:u_key_debounce|delay_cnt[5]        ; Merged with manual_clocking:u_manual_clocking|key_debounce:u_key_debounce|delay_cnt[5]  ;
+; set_alarm:u_set_alarm|key_debounce:u_key_debounce|delay_cnt[4]        ; Merged with manual_clocking:u_manual_clocking|key_debounce:u_key_debounce|delay_cnt[4]  ;
+; set_alarm:u_set_alarm|key_debounce:u_key_debounce|delay_cnt[3]        ; Merged with manual_clocking:u_manual_clocking|key_debounce:u_key_debounce|delay_cnt[3]  ;
+; set_alarm:u_set_alarm|key_debounce:u_key_debounce|delay_cnt[2]        ; Merged with manual_clocking:u_manual_clocking|key_debounce:u_key_debounce|delay_cnt[2]  ;
+; set_alarm:u_set_alarm|key_debounce:u_key_debounce|delay_cnt[1]        ; Merged with manual_clocking:u_manual_clocking|key_debounce:u_key_debounce|delay_cnt[1]  ;
+; set_alarm:u_set_alarm|key_debounce:u_key_debounce|delay_cnt[0]        ; Merged with manual_clocking:u_manual_clocking|key_debounce:u_key_debounce|delay_cnt[0]  ;
+; set_alarm:u_set_alarm|key_debounce:u_key_debounce|key_value           ; Merged with manual_clocking:u_manual_clocking|key_debounce:u_key_debounce|key_value     ;
+; set_alarm:u_set_alarm|alarm_hourH[3]                                  ; Stuck at GND due to stuck port data_in                                                  ;
+; manual_clocking:u_manual_clocking|manual_hourH[3]                     ; Stuck at GND due to stuck port data_in                                                  ;
+; set_alarm:u_set_alarm|alarm_hourH[2]                                  ; Stuck at GND due to stuck port data_in                                                  ;
+; manual_clocking:u_manual_clocking|manual_hourH[2]                     ; Stuck at GND due to stuck port data_in                                                  ;
+; self_clocking:u_self_clocking|self_hourH[2,3]                         ; Stuck at GND due to stuck port data_in                                                  ;
+; Total Number of Removed Registers = 29                                ;                                                                                         ;
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                           ;
++---------------------------------------------+---------------------------+---------------------------------------------+
+; Register name                               ; Reason for Removal        ; Registers Removed due to This Register      ;
++---------------------------------------------+---------------------------+---------------------------------------------+
+; set_alarm:u_set_alarm|alarm_hourH[3]        ; Stuck at GND              ; set_alarm:u_set_alarm|alarm_hourH[2]        ;
+;                                             ; due to stuck port data_in ;                                             ;
+; self_clocking:u_self_clocking|self_hourH[3] ; Stuck at GND              ; self_clocking:u_self_clocking|self_hourH[2] ;
+;                                             ; due to stuck port data_in ;                                             ;
++---------------------------------------------+---------------------------+---------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 950   ;
+; Number of registers using Synchronous Clear  ; 17    ;
+; Number of registers using Synchronous Load   ; 68    ;
+; Number of registers using Asynchronous Clear ; 448   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 381   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                                                                                                            ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                                                                                                             ; Fan out ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; alarm_clocking:u_alarm_clocking|alarm_led                                                                                                                                     ; 4       ;
+; hour_alarm:u_hour_alarm|hour_led                                                                                                                                              ; 2       ;
+; self_clocking:u_self_clocking|self_hourH[1]                                                                                                                                   ; 6       ;
+; self_clocking:u_self_clocking|self_hourL[0]                                                                                                                                   ; 7       ;
+; self_clocking:u_self_clocking|self_hourL[1]                                                                                                                                   ; 6       ;
+; self_clocking:u_self_clocking|self_minH[0]                                                                                                                                    ; 6       ;
+; self_clocking:u_self_clocking|self_minH[2]                                                                                                                                    ; 4       ;
+; self_clocking:u_self_clocking|self_minL[0]                                                                                                                                    ; 6       ;
+; self_clocking:u_self_clocking|self_minL[1]                                                                                                                                    ; 5       ;
+; self_clocking:u_self_clocking|self_minL[2]                                                                                                                                    ; 4       ;
+; manual_clocking:u_manual_clocking|key_debounce:u_key_debounce|key_value                                                                                                       ; 4       ;
+; decide_option:u_decide_option|key_debounce:u_key_debounce|key_value                                                                                                           ; 2       ;
+; set_alarm:u_set_alarm|key_debounce:u_key_debounce|key_reg                                                                                                                     ; 1       ;
+; decide_option:u_decide_option|key_debounce:u_key_debounce|key_reg                                                                                                             ; 1       ;
+; sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|tdo                                                                                                             ; 1       ;
+; sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|jtag_ir_reg[2]                                                                                                  ; 2       ;
+; sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|jtag_ir_reg[1]                                                                                                  ; 3       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[1] ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[2] ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[3] ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[4] ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[5] ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[6] ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[7] ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|trigger_out_mode_ff                                               ; 3       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[0] ; 1       ;
+; Total number of inverted registers = 26                                                                                                                                       ;         ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------+
+; 3:1                ; 20 bits   ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; Yes        ; |clockTest|manual_clocking:u_manual_clocking|key_debounce:u_key_debounce|delay_cnt[9] ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; Yes        ; |clockTest|decide_option:u_decide_option|key_debounce:u_key_debounce|delay_cnt[1]     ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |clockTest|set_alarm:u_set_alarm|alarm_hourH[3]                                       ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |clockTest|set_alarm:u_set_alarm|alarm_hourL[0]                                       ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |clockTest|manual_clocking:u_manual_clocking|manual_hourH[3]                          ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |clockTest|manual_clocking:u_manual_clocking|manual_hourL[1]                          ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |clockTest|self_clocking:u_self_clocking|self_secL[3]                                 ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |clockTest|self_clocking:u_self_clocking|self_secH[2]                                 ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; Yes        ; |clockTest|self_clocking:u_self_clocking|self_minH[3]                                 ;
+; 11:1               ; 3 bits    ; 21 LEs        ; 6 LEs                ; 15 LEs                 ; Yes        ; |clockTest|self_clocking:u_self_clocking|self_hourH[2]                                ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 4 LEs                ; 10 LEs                 ; Yes        ; |clockTest|self_clocking:u_self_clocking|self_hourL[2]                                ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |clockTest|self_clocking:u_self_clocking|self_minL[0]                                 ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; Yes        ; |clockTest|self_clocking:u_self_clocking|self_minH[0]                                 ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 4 LEs                ; 10 LEs                 ; Yes        ; |clockTest|self_clocking:u_self_clocking|self_hourL[1]                                ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |clockTest|set_final_time:u_set_final_time|secL[0]                                    ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |clockTest|set_final_time:u_set_final_time|minH[1]                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0                                                                                                                                        ;
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+----------------+
+; Parameter Name                                  ; Value                                                                                                                                               ; Type           ;
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+----------------+
+; lpm_type                                        ; sld_signaltap                                                                                                                                       ; String         ;
+; sld_node_info                                   ; 805334528                                                                                                                                           ; Untyped        ;
+; SLD_IP_VERSION                                  ; 6                                                                                                                                                   ; Signed Integer ;
+; SLD_IP_MINOR_VERSION                            ; 0                                                                                                                                                   ; Signed Integer ;
+; SLD_COMMON_IP_VERSION                           ; 0                                                                                                                                                   ; Signed Integer ;
+; sld_data_bits                                   ; 42                                                                                                                                                  ; Untyped        ;
+; sld_trigger_bits                                ; 42                                                                                                                                                  ; Untyped        ;
+; SLD_NODE_CRC_BITS                               ; 32                                                                                                                                                  ; Signed Integer ;
+; sld_node_crc_hiword                             ; 65305                                                                                                                                               ; Untyped        ;
+; sld_node_crc_loword                             ; 9859                                                                                                                                                ; Untyped        ;
+; SLD_INCREMENTAL_ROUTING                         ; 0                                                                                                                                                   ; Signed Integer ;
+; sld_sample_depth                                ; 128                                                                                                                                                 ; Untyped        ;
+; sld_segment_size                                ; 128                                                                                                                                                 ; Untyped        ;
+; SLD_RAM_BLOCK_TYPE                              ; AUTO                                                                                                                                                ; String         ;
+; sld_state_bits                                  ; 11                                                                                                                                                  ; Untyped        ;
+; sld_buffer_full_stop                            ; 1                                                                                                                                                   ; Untyped        ;
+; SLD_MEM_ADDRESS_BITS                            ; 7                                                                                                                                                   ; Signed Integer ;
+; SLD_DATA_BIT_CNTR_BITS                          ; 4                                                                                                                                                   ; Signed Integer ;
+; sld_trigger_level                               ; 1                                                                                                                                                   ; Untyped        ;
+; sld_trigger_in_enabled                          ; 0                                                                                                                                                   ; Untyped        ;
+; SLD_HPS_TRIGGER_IN_ENABLED                      ; 0                                                                                                                                                   ; Signed Integer ;
+; SLD_HPS_TRIGGER_OUT_ENABLED                     ; 0                                                                                                                                                   ; Signed Integer ;
+; SLD_HPS_EVENT_ENABLED                           ; 0                                                                                                                                                   ; Signed Integer ;
+; SLD_HPS_EVENT_ID                                ; 0                                                                                                                                                   ; Signed Integer ;
+; sld_advanced_trigger_entity                     ; basic,1,                                                                                                                                            ; Untyped        ;
+; sld_trigger_level_pipeline                      ; 1                                                                                                                                                   ; Untyped        ;
+; sld_enable_advanced_trigger                     ; 0                                                                                                                                                   ; Untyped        ;
+; SLD_ADVANCED_TRIGGER_1                          ; NONE                                                                                                                                                ; String         ;
+; SLD_ADVANCED_TRIGGER_2                          ; NONE                                                                                                                                                ; String         ;
+; SLD_ADVANCED_TRIGGER_3                          ; NONE                                                                                                                                                ; String         ;
+; SLD_ADVANCED_TRIGGER_4                          ; NONE                                                                                                                                                ; String         ;
+; SLD_ADVANCED_TRIGGER_5                          ; NONE                                                                                                                                                ; String         ;
+; SLD_ADVANCED_TRIGGER_6                          ; NONE                                                                                                                                                ; String         ;
+; SLD_ADVANCED_TRIGGER_7                          ; NONE                                                                                                                                                ; String         ;
+; SLD_ADVANCED_TRIGGER_8                          ; NONE                                                                                                                                                ; String         ;
+; SLD_ADVANCED_TRIGGER_9                          ; NONE                                                                                                                                                ; String         ;
+; SLD_ADVANCED_TRIGGER_10                         ; NONE                                                                                                                                                ; String         ;
+; sld_inversion_mask_length                       ; 147                                                                                                                                                 ; Untyped        ;
+; sld_inversion_mask                              ; 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Untyped        ;
+; sld_power_up_trigger                            ; 0                                                                                                                                                   ; Untyped        ;
+; SLD_STATE_FLOW_MGR_ENTITY                       ; state_flow_mgr_entity.vhd                                                                                                                           ; String         ;
+; sld_state_flow_use_generated                    ; 0                                                                                                                                                   ; Untyped        ;
+; sld_current_resource_width                      ; 1                                                                                                                                                   ; Untyped        ;
+; sld_attribute_mem_mode                          ; OFF                                                                                                                                                 ; Untyped        ;
+; SLD_STORAGE_QUALIFIER_BITS                      ; 1                                                                                                                                                   ; Signed Integer ;
+; SLD_STORAGE_QUALIFIER_GAP_RECORD                ; 0                                                                                                                                                   ; Signed Integer ;
+; SLD_STORAGE_QUALIFIER_MODE                      ; OFF                                                                                                                                                 ; String         ;
+; SLD_STORAGE_QUALIFIER_ENABLE_ADVANCED_CONDITION ; 0                                                                                                                                                   ; Signed Integer ;
+; sld_storage_qualifier_inversion_mask_length     ; 0                                                                                                                                                   ; Untyped        ;
+; SLD_STORAGE_QUALIFIER_ADVANCED_CONDITION_ENTITY ; basic                                                                                                                                               ; String         ;
+; SLD_STORAGE_QUALIFIER_PIPELINE                  ; 0                                                                                                                                                   ; Signed Integer ;
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; SignalTap II Logic Analyzer Settings                                                                                                                                                                                                                                    ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+; Instance Index ; Instance Name    ; Trigger Input Width ; Data Input Width ; Sample Depth ; Segments ; Storage Qualifier Type ; Trigger Flow Control ; Trigger Conditions ; Advanced Trigger Conditions ; Trigger In Used ; Trigger Out Used ; Power-Up Trigger Enabled ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+; 0              ; auto_signaltap_0 ; 42                  ; 42               ; 128          ; 1        ; continuous             ; sequential           ; 1                  ; 0                           ; no              ; no               ; no                       ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Connections to In-System Debugging Instance "auto_signaltap_0"                                                                                                                                                                                                                                                    ;
++---------------------------+---------------+-----------+----------------+-------------------+-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Name                      ; Type          ; Status    ; Partition Name ; Netlist Type Used ; Actual Connection                                   ; Details                                                                                                                                                        ;
++---------------------------+---------------+-----------+----------------+-------------------+-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; add_time                  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; add_time                                            ; N/A                                                                                                                                                            ;
+; add_time                  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; add_time                                            ; N/A                                                                                                                                                            ;
+; alarm_led                 ; pre-synthesis ; connected ; Top            ; post-synthesis    ; alarm_clocking:u_alarm_clocking|alarm_led~_wirecell ; N/A                                                                                                                                                            ;
+; alarm_led                 ; pre-synthesis ; connected ; Top            ; post-synthesis    ; alarm_clocking:u_alarm_clocking|alarm_led~_wirecell ; N/A                                                                                                                                                            ;
+; digital_tube_1[0]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|digital_tube_4[0]~0                     ; N/A                                                                                                                                                            ;
+; digital_tube_1[0]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|digital_tube_4[0]~0                     ; N/A                                                                                                                                                            ;
+; digital_tube_1[1]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|digital_tube_4[1]~1                     ; N/A                                                                                                                                                            ;
+; digital_tube_1[1]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|digital_tube_4[1]~1                     ; N/A                                                                                                                                                            ;
+; digital_tube_1[2]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|Decoder3~0                              ; N/A                                                                                                                                                            ;
+; digital_tube_1[2]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|Decoder3~0                              ; N/A                                                                                                                                                            ;
+; digital_tube_1[3]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr15~0                              ; N/A                                                                                                                                                            ;
+; digital_tube_1[3]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr15~0                              ; N/A                                                                                                                                                            ;
+; digital_tube_1[4]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr14~0                              ; N/A                                                                                                                                                            ;
+; digital_tube_1[4]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr14~0                              ; N/A                                                                                                                                                            ;
+; digital_tube_1[5]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr13~0                              ; N/A                                                                                                                                                            ;
+; digital_tube_1[5]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr13~0                              ; N/A                                                                                                                                                            ;
+; digital_tube_1[6]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr12~0_wirecell                     ; N/A                                                                                                                                                            ;
+; digital_tube_1[6]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr12~0_wirecell                     ; N/A                                                                                                                                                            ;
+; digital_tube_1[7]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ~VCC                                                ; N/A                                                                                                                                                            ;
+; digital_tube_1[7]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ~VCC                                                ; N/A                                                                                                                                                            ;
+; digital_tube_2[0]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|digital_tube_3[0]~0                     ; N/A                                                                                                                                                            ;
+; digital_tube_2[0]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|digital_tube_3[0]~0                     ; N/A                                                                                                                                                            ;
+; digital_tube_2[1]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|digital_tube_3[1]~1                     ; N/A                                                                                                                                                            ;
+; digital_tube_2[1]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|digital_tube_3[1]~1                     ; N/A                                                                                                                                                            ;
+; digital_tube_2[2]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|Decoder2~0                              ; N/A                                                                                                                                                            ;
+; digital_tube_2[2]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|Decoder2~0                              ; N/A                                                                                                                                                            ;
+; digital_tube_2[3]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr11~0                              ; N/A                                                                                                                                                            ;
+; digital_tube_2[3]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr11~0                              ; N/A                                                                                                                                                            ;
+; digital_tube_2[4]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr10~0                              ; N/A                                                                                                                                                            ;
+; digital_tube_2[4]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr10~0                              ; N/A                                                                                                                                                            ;
+; digital_tube_2[5]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr9~0                               ; N/A                                                                                                                                                            ;
+; digital_tube_2[5]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr9~0                               ; N/A                                                                                                                                                            ;
+; digital_tube_2[6]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr8~0_wirecell                      ; N/A                                                                                                                                                            ;
+; digital_tube_2[6]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr8~0_wirecell                      ; N/A                                                                                                                                                            ;
+; digital_tube_2[7]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ~VCC                                                ; N/A                                                                                                                                                            ;
+; digital_tube_2[7]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ~VCC                                                ; N/A                                                                                                                                                            ;
+; digital_tube_3[0]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|digital_tube_2[0]~0                     ; N/A                                                                                                                                                            ;
+; digital_tube_3[0]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|digital_tube_2[0]~0                     ; N/A                                                                                                                                                            ;
+; digital_tube_3[1]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|digital_tube_2[1]~1                     ; N/A                                                                                                                                                            ;
+; digital_tube_3[1]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|digital_tube_2[1]~1                     ; N/A                                                                                                                                                            ;
+; digital_tube_3[2]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|Decoder1~0                              ; N/A                                                                                                                                                            ;
+; digital_tube_3[2]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|Decoder1~0                              ; N/A                                                                                                                                                            ;
+; digital_tube_3[3]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr7~0                               ; N/A                                                                                                                                                            ;
+; digital_tube_3[3]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr7~0                               ; N/A                                                                                                                                                            ;
+; digital_tube_3[4]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr6~0                               ; N/A                                                                                                                                                            ;
+; digital_tube_3[4]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr6~0                               ; N/A                                                                                                                                                            ;
+; digital_tube_3[5]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr5~0                               ; N/A                                                                                                                                                            ;
+; digital_tube_3[5]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr5~0                               ; N/A                                                                                                                                                            ;
+; digital_tube_3[6]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr4~0_wirecell                      ; N/A                                                                                                                                                            ;
+; digital_tube_3[6]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr4~0_wirecell                      ; N/A                                                                                                                                                            ;
+; digital_tube_3[7]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ~VCC                                                ; N/A                                                                                                                                                            ;
+; digital_tube_3[7]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ~VCC                                                ; N/A                                                                                                                                                            ;
+; digital_tube_4[0]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|digital_tube_1[0]~0                     ; N/A                                                                                                                                                            ;
+; digital_tube_4[0]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|digital_tube_1[0]~0                     ; N/A                                                                                                                                                            ;
+; digital_tube_4[1]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|digital_tube_1[1]~1                     ; N/A                                                                                                                                                            ;
+; digital_tube_4[1]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|digital_tube_1[1]~1                     ; N/A                                                                                                                                                            ;
+; digital_tube_4[2]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|Decoder0~0                              ; N/A                                                                                                                                                            ;
+; digital_tube_4[2]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|Decoder0~0                              ; N/A                                                                                                                                                            ;
+; digital_tube_4[3]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr3~0                               ; N/A                                                                                                                                                            ;
+; digital_tube_4[3]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr3~0                               ; N/A                                                                                                                                                            ;
+; digital_tube_4[4]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr2~0                               ; N/A                                                                                                                                                            ;
+; digital_tube_4[4]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr2~0                               ; N/A                                                                                                                                                            ;
+; digital_tube_4[5]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr1~0                               ; N/A                                                                                                                                                            ;
+; digital_tube_4[5]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr1~0                               ; N/A                                                                                                                                                            ;
+; digital_tube_4[6]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr0~0_wirecell                      ; N/A                                                                                                                                                            ;
+; digital_tube_4[6]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|WideOr0~0_wirecell                      ; N/A                                                                                                                                                            ;
+; digital_tube_4[7]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ~VCC                                                ; N/A                                                                                                                                                            ;
+; digital_tube_4[7]         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ~VCC                                                ; N/A                                                                                                                                                            ;
+; hour_led                  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; hour_alarm:u_hour_alarm|hour_led~_wirecell          ; N/A                                                                                                                                                            ;
+; hour_led                  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; hour_alarm:u_hour_alarm|hour_led~_wirecell          ; N/A                                                                                                                                                            ;
+; led0                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|led0~0                                  ; N/A                                                                                                                                                            ;
+; led0                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|led0~0                                  ; N/A                                                                                                                                                            ;
+; led1                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|led1~0                                  ; N/A                                                                                                                                                            ;
+; led1                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; show:u_show|led1~0                                  ; N/A                                                                                                                                                            ;
+; select_option             ; pre-synthesis ; connected ; Top            ; post-synthesis    ; select_option                                       ; N/A                                                                                                                                                            ;
+; select_option             ; pre-synthesis ; connected ; Top            ; post-synthesis    ; select_option                                       ; N/A                                                                                                                                                            ;
+; sw_0                      ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                                 ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; sw_0                      ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                                 ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; sw_1                      ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                                 ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; sw_1                      ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                                 ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; clk                       ; post-fitting  ; connected ; Top            ; post-synthesis    ; clk                                                 ; N/A                                                                                                                                                            ;
+; clk                       ; post-fitting  ; connected ; Top            ; post-synthesis    ; clk                                                 ; N/A                                                                                                                                                            ;
+; rst_n                     ; post-fitting  ; connected ; Top            ; post-synthesis    ; rst_n                                               ; N/A                                                                                                                                                            ;
+; rst_n                     ; post-fitting  ; connected ; Top            ; post-synthesis    ; rst_n                                               ; N/A                                                                                                                                                            ;
+; auto_stp_external_clock_0 ; dynamic pin   ; connected ; Top            ; post-synthesis    ; auto_stp_external_clock_0                           ; N/A                                                                                                                                                            ;
++---------------------------+---------------+-----------+----------------+-------------------+-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Fri Dec 27 12:39:35 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off clockTest -c clockTest
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file alarm_clocking.v
+    Info (12023): Found entity 1: alarm_clocking
+Info (12021): Found 1 design units, including 1 entities, in source file clocktest.v
+    Info (12023): Found entity 1: clockTest
+Info (12021): Found 1 design units, including 1 entities, in source file decide_option.v
+    Info (12023): Found entity 1: decide_option
+Info (12021): Found 1 design units, including 1 entities, in source file fenpin.v
+    Info (12023): Found entity 1: fenPIN
+Info (12021): Found 1 design units, including 1 entities, in source file hour_alarm.v
+    Info (12023): Found entity 1: hour_alarm
+Info (12021): Found 1 design units, including 1 entities, in source file manual_clocking.v
+    Info (12023): Found entity 1: manual_clocking
+Info (12021): Found 1 design units, including 1 entities, in source file self_clocking.v
+    Info (12023): Found entity 1: self_clocking
+Info (12021): Found 1 design units, including 1 entities, in source file set_alarm.v
+    Info (12023): Found entity 1: set_alarm
+Info (12021): Found 1 design units, including 1 entities, in source file set_final_time.v
+    Info (12023): Found entity 1: set_final_time
+Info (12021): Found 1 design units, including 1 entities, in source file show.v
+    Info (12023): Found entity 1: show
+Info (12021): Found 1 design units, including 1 entities, in source file key_debounce.v
+    Info (12023): Found entity 1: key_debounce
+Info (12021): Found 1 design units, including 1 entities, in source file count.v
+    Info (12023): Found entity 1: count
+Info (12127): Elaborating entity "clockTest" for the top level hierarchy
+Info (12128): Elaborating entity "fenPIN" for hierarchy "fenPIN:u_fenPIN"
+Info (12128): Elaborating entity "self_clocking" for hierarchy "self_clocking:u_self_clocking"
+Info (12128): Elaborating entity "manual_clocking" for hierarchy "manual_clocking:u_manual_clocking"
+Info (12128): Elaborating entity "key_debounce" for hierarchy "manual_clocking:u_manual_clocking|key_debounce:u_key_debounce"
+Info (12128): Elaborating entity "set_alarm" for hierarchy "set_alarm:u_set_alarm"
+Info (12128): Elaborating entity "alarm_clocking" for hierarchy "alarm_clocking:u_alarm_clocking"
+Info (12128): Elaborating entity "decide_option" for hierarchy "decide_option:u_decide_option"
+Info (12128): Elaborating entity "count" for hierarchy "count:u_count"
+Warning (10235): Verilog HDL Always Construct warning at count.v(20): variable "sec_1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at count.v(22): variable "sec_2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at count.v(24): variable "sec_3" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at count.v(26): variable "sec_4" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at count.v(30): variable "sec_4" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at count.v(33): variable "sec_3" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at count.v(36): variable "sec_2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at count.v(39): variable "sec_1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at count.v(11): inferring latch(es) for variable "sec_1", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at count.v(11): inferring latch(es) for variable "sec_2", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at count.v(11): inferring latch(es) for variable "sec_3", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at count.v(11): inferring latch(es) for variable "sec_4", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "sec_4[0]" at count.v(11)
+Info (10041): Inferred latch for "sec_4[1]" at count.v(11)
+Info (10041): Inferred latch for "sec_4[2]" at count.v(11)
+Info (10041): Inferred latch for "sec_4[3]" at count.v(11)
+Info (10041): Inferred latch for "sec_3[0]" at count.v(11)
+Info (10041): Inferred latch for "sec_3[1]" at count.v(11)
+Info (10041): Inferred latch for "sec_3[2]" at count.v(11)
+Info (10041): Inferred latch for "sec_3[3]" at count.v(11)
+Info (10041): Inferred latch for "sec_2[0]" at count.v(11)
+Info (10041): Inferred latch for "sec_2[1]" at count.v(11)
+Info (10041): Inferred latch for "sec_2[2]" at count.v(11)
+Info (10041): Inferred latch for "sec_2[3]" at count.v(11)
+Info (10041): Inferred latch for "sec_1[0]" at count.v(11)
+Info (10041): Inferred latch for "sec_1[1]" at count.v(11)
+Info (10041): Inferred latch for "sec_1[2]" at count.v(11)
+Info (10041): Inferred latch for "sec_1[3]" at count.v(11)
+Info (12128): Elaborating entity "set_final_time" for hierarchy "set_final_time:u_set_final_time"
+Warning (10240): Verilog HDL Always Construct warning at set_final_time.v(39): inferring latch(es) for variable "secL", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at set_final_time.v(39): inferring latch(es) for variable "secH", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at set_final_time.v(39): inferring latch(es) for variable "minL", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at set_final_time.v(39): inferring latch(es) for variable "minH", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at set_final_time.v(39): inferring latch(es) for variable "hourL", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at set_final_time.v(39): inferring latch(es) for variable "hourH", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "hourH[0]" at set_final_time.v(39)
+Info (10041): Inferred latch for "hourH[1]" at set_final_time.v(39)
+Info (10041): Inferred latch for "hourH[2]" at set_final_time.v(39)
+Info (10041): Inferred latch for "hourH[3]" at set_final_time.v(39)
+Info (10041): Inferred latch for "hourL[0]" at set_final_time.v(39)
+Info (10041): Inferred latch for "hourL[1]" at set_final_time.v(39)
+Info (10041): Inferred latch for "hourL[2]" at set_final_time.v(39)
+Info (10041): Inferred latch for "hourL[3]" at set_final_time.v(39)
+Info (10041): Inferred latch for "minH[0]" at set_final_time.v(39)
+Info (10041): Inferred latch for "minH[1]" at set_final_time.v(39)
+Info (10041): Inferred latch for "minH[2]" at set_final_time.v(39)
+Info (10041): Inferred latch for "minH[3]" at set_final_time.v(39)
+Info (10041): Inferred latch for "minL[0]" at set_final_time.v(39)
+Info (10041): Inferred latch for "minL[1]" at set_final_time.v(39)
+Info (10041): Inferred latch for "minL[2]" at set_final_time.v(39)
+Info (10041): Inferred latch for "minL[3]" at set_final_time.v(39)
+Info (10041): Inferred latch for "secH[0]" at set_final_time.v(39)
+Info (10041): Inferred latch for "secH[1]" at set_final_time.v(39)
+Info (10041): Inferred latch for "secH[2]" at set_final_time.v(39)
+Info (10041): Inferred latch for "secH[3]" at set_final_time.v(39)
+Info (10041): Inferred latch for "secL[0]" at set_final_time.v(39)
+Info (10041): Inferred latch for "secL[1]" at set_final_time.v(39)
+Info (10041): Inferred latch for "secL[2]" at set_final_time.v(39)
+Info (10041): Inferred latch for "secL[3]" at set_final_time.v(39)
+Info (12128): Elaborating entity "hour_alarm" for hierarchy "hour_alarm:u_hour_alarm"
+Info (12128): Elaborating entity "show" for hierarchy "show:u_show"
+Warning (10036): Verilog HDL or VHDL warning at show.v(22): object "led_ctrl_secL" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at show.v(23): object "led_ctrl_secH" assigned a value but never read
+Warning (10235): Verilog HDL Always Construct warning at show.v(37): variable "led0" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at show.v(53): variable "led1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_qp14.tdf
+    Info (12023): Found entity 1: altsyncram_qp14
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_aoc.tdf
+    Info (12023): Found entity 1: mux_aoc
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_rqf.tdf
+    Info (12023): Found entity 1: decode_rqf
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_ubi.tdf
+    Info (12023): Found entity 1: cntr_ubi
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_acc.tdf
+    Info (12023): Found entity 1: cmpr_acc
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_02j.tdf
+    Info (12023): Found entity 1: cntr_02j
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_sbi.tdf
+    Info (12023): Found entity 1: cntr_sbi
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_8cc.tdf
+    Info (12023): Found entity 1: cmpr_8cc
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_gui.tdf
+    Info (12023): Found entity 1: cntr_gui
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_5cc.tdf
+    Info (12023): Found entity 1: cmpr_5cc
+Info (12033): Analysis and Synthesis generated SignalTap II or debug node instance "auto_signaltap_0"
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|hourH[0]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|hourH[1]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|hourH[2]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|hourH[3]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|hourL[0]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|hourL[1]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|hourL[2]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|hourL[3]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|minH[0]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|minH[1]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|minH[2]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|minH[3]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|minL[0]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|minL[1]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|minL[2]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|minL[3]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|hourH[3]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|hourH[2]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|hourH[1]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|hourH[0]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|hourL[3]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|hourL[2]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|hourL[1]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|hourL[0]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|minH[3]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|minH[2]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|minH[1]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|minH[0]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|minL[3]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|minL[2]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|minL[1]" is permanently enabled
+Warning (14026): LATCH primitive "set_final_time:u_set_final_time|minL[0]" is permanently enabled
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "digital_tube_1[7]" is stuck at VCC
+    Warning (13410): Pin "digital_tube_2[7]" is stuck at VCC
+    Warning (13410): Pin "digital_tube_3[7]" is stuck at VCC
+    Warning (13410): Pin "digital_tube_4[7]" is stuck at VCC
+Critical Warning (35025): Partially connected in-system debug instance "auto_signaltap_0" to 81 of its 85 required data inputs, trigger inputs, acquisition clocks, and dynamic pins.  There were 0 illegal, 0 inaccessible, and 4 missing sources or connections.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1486 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 37 output pins
+    Info (21061): Implemented 1394 logic cells
+    Info (21064): Implemented 42 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 60 warnings
+    Info: Peak virtual memory: 4689 megabytes
+    Info: Processing ended: Fri Dec 27 12:39:45 2019
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:09
+
+

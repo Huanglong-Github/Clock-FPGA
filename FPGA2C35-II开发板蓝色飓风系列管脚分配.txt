@@ -1,0 +1,405 @@
+**********************************  clock/pll  *****************************************
+
+set_location_assignment PIN_AF14 -to clk1
+set_location_assignment PIN_P2   -to clk2
+set_location_assignment PIN_P26  -to clk3
+set_location_assignment PIN_D13  -to clk4
+
+**************************************  rst  *******************************************
+
+set_location_assignment PIN_L20 -to rst
+
+********************************  4bits button  ****************************************
+
+set_location_assignment PIN_T21  -to button[0]
+set_location_assignment PIN_R24  -to button[1]
+set_location_assignment PIN_U22  -to button[2]
+set_location_assignment PIN_T22  -to button[3]
+
+*************************************  SDRAM  ******************************************
+
+set_location_assignment PIN_AE15 -to sdram_d[0]
+set_location_assignment PIN_AE16 -to sdram_d[1]
+set_location_assignment PIN_AF17 -to sdram_d[2]
+set_location_assignment PIN_AE17 -to sdram_d[3]
+set_location_assignment PIN_AF18 -to sdram_d[4]
+set_location_assignment PIN_AA25 -to sdram_d[5]
+set_location_assignment PIN_AA26 -to sdram_d[6]
+set_location_assignment PIN_Y25  -to sdram_d[7]
+set_location_assignment PIN_AF22 -to sdram_d[8]
+set_location_assignment PIN_AE21 -to sdram_d[9]
+set_location_assignment PIN_AF21 -to sdram_d[10]
+set_location_assignment PIN_AE20 -to sdram_d[11]
+set_location_assignment PIN_AF20 -to sdram_d[12]
+set_location_assignment PIN_AE19 -to sdram_d[13]
+set_location_assignment PIN_AF19 -to sdram_d[14]
+set_location_assignment PIN_AE18 -to sdram_d[15]
+
+set_location_assignment PIN_R25  -to sdram_a[0]
+set_location_assignment PIN_P24  -to sdram_a[1]
+set_location_assignment PIN_M25  -to sdram_a[2]
+set_location_assignment PIN_L25  -to sdram_a[3]
+set_location_assignment PIN_AB26 -to sdram_a[4]
+set_location_assignment PIN_AB25 -to sdram_a[5]
+set_location_assignment PIN_AC26 -to sdram_a[6]
+set_location_assignment PIN_AC25 -to sdram_a[7]
+set_location_assignment PIN_AD25 -to sdram_a[8]
+set_location_assignment PIN_AE25 -to sdram_a[9]
+set_location_assignment PIN_T25  -to sdram_a[10]
+set_location_assignment PIN_AE24 -to sdram_a[11]
+set_location_assignment PIN_AE23 -to sdram_a[12]
+
+set_location_assignment PIN_Y26  -to sdram_dqm[0]
+set_location_assignment PIN_AE22 -to sdram_dqm[1]
+
+set_location_assignment PIN_U25  -to sdram_ba[0]
+set_location_assignment PIN_U26  -to sdram_ba[1]
+set_location_assignment PIN_V26  -to sdram_cs_n
+set_location_assignment PIN_V25  -to sdram_ras_n
+set_location_assignment PIN_W26  -to sdram_cas_n 
+set_location_assignment PIN_W25  -to sdram_we_n
+set_location_assignment PIN_AF23 -to sdram_cke
+set_location_assignment PIN_V21  -to sdram_clk
+
+
+*************************************  FLASH  ******************************************
+
+set_location_assignment PIN_D7   -to flash_a[0]
+set_location_assignment PIN_K9   -to flash_a[1]
+set_location_assignment PIN_K6   -to flash_a[2]
+set_location_assignment PIN_K5   -to flash_a[3]
+set_location_assignment PIN_J6   -to flash_a[4]
+set_location_assignment PIN_J5   -to flash_a[5]
+set_location_assignment PIN_J1   -to flash_a[6]
+set_location_assignment PIN_J2   -to flash_a[7]
+set_location_assignment PIN_H1   -to flash_a[8]
+set_location_assignment PIN_H2   -to flash_a[9]
+set_location_assignment PIN_G1   -to flash_a[10]
+set_location_assignment PIN_G2   -to flash_a[11]
+set_location_assignment PIN_E1   -to flash_a[12]
+set_location_assignment PIN_E2   -to flash_a[13]
+set_location_assignment PIN_D1   -to flash_a[14]
+set_location_assignment PIN_M4   -to flash_a[15]
+set_location_assignment PIN_L6   -to flash_a[16]
+set_location_assignment PIN_L7   -to flash_a[17]
+set_location_assignment PIN_K7   -to flash_a[18]
+set_location_assignment PIN_J7   -to flash_a[19]
+set_location_assignment PIN_H6   -to flash_a[20]
+set_location_assignment PIN_G5   -to flash_a[21]
+set_location_assignment PIN_F6   -to flash_a[22]
+set_location_assignment PIN_C6   -to flash_a[23]
+
+set_location_assignment PIN_C7   -to flash_d[0]
+set_location_assignment PIN_C8   -to flash_d[1]
+set_location_assignment PIN_D9   -to flash_d[2]
+set_location_assignment PIN_C9   -to flash_d[3]
+set_location_assignment PIN_D10  -to flash_d[4]
+set_location_assignment PIN_C10  -to flash_d[5]
+set_location_assignment PIN_D11  -to flash_d[6]
+set_location_assignment PIN_B2   -to flash_d[7]
+
+set_location_assignment PIN_F2   -to flash_select_n
+set_location_assignment PIN_C2   -to flash_read_n
+set_location_assignment PIN_D2   -to flash_write_n
+
+*************************************  SRAM  *******************************************
+
+set_location_assignment PIN_V1   -to sram_a[0]
+set_location_assignment PIN_V2   -to sram_a[1]
+set_location_assignment PIN_U2   -to sram_a[2]
+set_location_assignment PIN_U1   -to sram_a[3]
+set_location_assignment PIN_T2   -to sram_a[4]
+set_location_assignment PIN_AB1  -to sram_a[5]
+set_location_assignment PIN_AB2  -to sram_a[6]
+set_location_assignment PIN_AC1  -to sram_a[7]
+set_location_assignment PIN_AC2  -to sram_a[8]
+set_location_assignment PIN_AD2  -to sram_a[9]
+set_location_assignment PIN_AF13 -to sram_a[10]
+set_location_assignment PIN_AE13 -to sram_a[11]
+set_location_assignment PIN_AE12 -to sram_a[12]
+set_location_assignment PIN_AE11 -to sram_a[13]
+set_location_assignment PIN_AF10 -to sram_a[14]
+set_location_assignment PIN_AE6  -to sram_a[15]
+set_location_assignment PIN_AF6  -to sram_a[16]
+set_location_assignment PIN_AE7  -to sram_a[17]
+
+set_location_assignment PIN_M2   -to sram_d[0]
+set_location_assignment PIN_L2   -to sram_d[1]
+set_location_assignment PIN_K1   -to sram_d[2]
+set_location_assignment PIN_K2   -to sram_d[3]
+set_location_assignment PIN_W1   -to sram_d[4]
+set_location_assignment PIN_W2   -to sram_d[5]
+set_location_assignment PIN_Y1   -to sram_d[6]
+set_location_assignment PIN_AA1  -to sram_d[7]
+set_location_assignment PIN_AF9  -to sram_d[8]
+set_location_assignment PIN_AE9  -to sram_d[9]
+set_location_assignment PIN_AF8  -to sram_d[10]
+set_location_assignment PIN_AE8  -to sram_d[11]
+set_location_assignment PIN_AF7  -to sram_d[12]
+set_location_assignment PIN_AE2  -to sram_d[13]
+set_location_assignment PIN_AE3  -to sram_d[14]
+set_location_assignment PIN_AE4  -to sram_d[15]
+
+set_location_assignment PIN_AF4  -to sram_lb_n
+set_location_assignment PIN_AE5  -to sram_ub_n
+set_location_assignment PIN_AA2  -to sram_we_n
+set_location_assignment PIN_AF5  -to sram_oe_n
+set_location_assignment PIN_R2   -to sram_ce_n
+
+*********************************     AC97   *******************************************
+
+set_location_assignment PIN_V23  -to ac97_bit_clk
+set_location_assignment PIN_T23  -to ac97_sdata_i
+set_location_assignment PIN_U24  -to ac97_irq
+set_location_assignment PIN_Y21  -to ac97_rst_n
+set_location_assignment PIN_W24  -to ac97_sdata_o
+set_location_assignment PIN_AC23 -to ac97_sync
+
+*********************************     SD      *******************************************
+
+set_location_assignment PIN_C4   -to sd_cs
+set_location_assignment PIN_D5   -to sd_cmd
+set_location_assignment PIN_J10  -to sd_dat
+set_location_assignment PIN_D6   -to sd_clk
+
+
+*********************************  16207LCD  *******************************************
+
+set_location_assignment PIN_AA15 -to lcd_d[0]
+set_location_assignment PIN_AA16 -to lcd_d[1]
+set_location_assignment PIN_AA17 -to lcd_d[2]
+set_location_assignment PIN_AB18 -to lcd_d[3]
+set_location_assignment PIN_AA18 -to lcd_d[4]
+set_location_assignment PIN_AA20 -to lcd_d[5]
+set_location_assignment PIN_AB20 -to lcd_d[6]
+set_location_assignment PIN_AB21 -to lcd_d[7]
+set_location_assignment PIN_Y12  -to lcd_rs
+set_location_assignment PIN_W11  -to lcd_rw
+set_location_assignment PIN_Y15  -to lcd_e
+
+***********************************  DM9000  *******************************************
+
+set_location_assignment PIN_A21  -to dm9k_d[0]
+set_location_assignment PIN_B20  -to dm9k_d[1]
+set_location_assignment PIN_A20  -to dm9k_d[2]
+set_location_assignment PIN_B19  -to dm9k_d[3]
+set_location_assignment PIN_A19  -to dm9k_d[4]
+set_location_assignment PIN_B18  -to dm9k_d[5]
+set_location_assignment PIN_A18  -to dm9k_d[6]
+set_location_assignment PIN_B17  -to dm9k_d[7]
+set_location_assignment PIN_C25  -to dm9k_d[8]
+set_location_assignment PIN_B25  -to dm9k_d[9]
+set_location_assignment PIN_B24  -to dm9k_d[10]
+set_location_assignment PIN_B23  -to dm9k_d[11]
+set_location_assignment PIN_A23  -to dm9k_d[12]
+set_location_assignment PIN_B22  -to dm9k_d[13]
+set_location_assignment PIN_A22  -to dm9k_d[14]
+set_location_assignment PIN_B21  -to dm9k_d[15]
+
+set_location_assignment PIN_F25  -to dm9k_cs_n
+set_location_assignment PIN_F26  -to dm9k_rst_n
+set_location_assignment PIN_E25  -to dm9k_rd_n
+set_location_assignment PIN_E26  -to dm9k_wr_n
+set_location_assignment PIN_D25  -to dm9k_cmd
+set_location_assignment PIN_D26  -to dm9k_int
+
+*********************************  VGA30 bits ******************************************
+
+set_location_assignment PIN_E15  -to vga_r[9]
+set_location_assignment PIN_F13  -to vga_r[8]
+set_location_assignment PIN_K26  -to vga_r[7]
+set_location_assignment PIN_K25  -to vga_r[6]
+set_location_assignment PIN_J26  -to vga_r[5]
+set_location_assignment PIN_J25  -to vga_r[4]
+set_location_assignment PIN_H26  -to vga_r[3]
+set_location_assignment PIN_H25  -to vga_r[2]
+set_location_assignment PIN_G26  -to vga_r[1]
+set_location_assignment PIN_G25  -to vga_r[0]
+
+
+set_location_assignment PIN_G15  -to vga_b[9]
+set_location_assignment PIN_G16  -to vga_b[8]
+set_location_assignment PIN_G17  -to vga_b[7]
+set_location_assignment PIN_G18  -to vga_b[6]
+set_location_assignment PIN_H16  -to vga_b[5]
+set_location_assignment PIN_F20  -to vga_b[4]
+set_location_assignment PIN_E22  -to vga_b[3]
+set_location_assignment PIN_G21  -to vga_b[2]
+set_location_assignment PIN_J18  -to vga_b[1]
+set_location_assignment PIN_K19  -to vga_b[0]
+
+
+set_location_assignment PIN_F16  -to vga_g[9]
+set_location_assignment PIN_F15  -to vga_g[8]
+set_location_assignment PIN_T24  -to vga_g[7]
+set_location_assignment PIN_P23  -to vga_g[6]
+set_location_assignment PIN_M22  -to vga_g[5]
+set_location_assignment PIN_L21  -to vga_g[4]
+set_location_assignment PIN_K22  -to vga_g[3]
+set_location_assignment PIN_J22  -to vga_g[2]
+set_location_assignment PIN_H23  -to vga_g[1]
+set_location_assignment PIN_H24  -to vga_g[0]
+
+
+set_location_assignment PIN_C12  -to vga_hsync
+set_location_assignment PIN_F12  -to vga_vsync
+set_location_assignment PIN_F17  -to vga_blank
+set_location_assignment PIN_H17  -to vga_sync
+set_location_assignment PIN_F21  -to vga_clk
+
+******************************    外接LCD   *****************************************
+set_location_assignment PIN_G22 -to vga1_r[7]
+set_location_assignment PIN_J17 -to vga1_r[6]
+set_location_assignment PIN_J21 -to vga1_r[5]
+set_location_assignment PIN_H21 -to vga1_r[4]
+set_location_assignment PIN_J20 -to vga1_r[3]
+
+set_location_assignment PIN_D18 -to vga1_g[7]
+set_location_assignment PIN_C17 -to vga1_g[6]
+set_location_assignment PIN_C19 -to vga1_g[5]
+set_location_assignment PIN_E18 -to vga1_g[4]
+set_location_assignment PIN_D20 -to vga1_g[3]
+set_location_assignment PIN_D19 -to vga1_g[2]
+
+set_location_assignment PIN_C21 -to vga1_b[7]
+set_location_assignment PIN_L24 -to vga1_b[6]
+set_location_assignment PIN_L23 -to vga1_b[5]
+set_location_assignment PIN_M21 -to vga1_b[4]
+set_location_assignment PIN_K21 -to vga1_b[3]
+
+set_location_assignment PIN_D16 -to vga1_blank
+set_location_assignment PIN_C15 -to vga1_vsync
+set_location_assignment PIN_C16 -to vga1_hsync
+set_location_assignment PIN_E5  -to vga1_clk
+
+**********************************    USB   ********************************************
+set_location_assignment PIN_H10  -to usb_d[0]
+set_location_assignment PIN_G9   -to usb_d[1]
+set_location_assignment PIN_B3   -to usb_d[2]
+set_location_assignment PIN_B4   -to usb_d[3]
+set_location_assignment PIN_A4   -to usb_d[4]
+set_location_assignment PIN_B5   -to usb_d[5]
+set_location_assignment PIN_A5   -to usb_d[6]
+set_location_assignment PIN_B6   -to usb_d[7]
+set_location_assignment PIN_A6   -to usb_d[8]
+set_location_assignment PIN_B7   -to usb_d[9]
+set_location_assignment PIN_A7   -to usb_d[10]
+set_location_assignment PIN_B8   -to usb_d[11]
+set_location_assignment PIN_A8   -to usb_d[12]
+set_location_assignment PIN_B9   -to usb_d[13]
+set_location_assignment PIN_A9   -to usb_d[14]
+set_location_assignment PIN_B10  -to usb_d[15]
+
+set_location_assignment PIN_H11  -to usb_a[0]
+set_location_assignment PIN_E10  -to usb_a[1]
+
+set_location_assignment PIN_A10  -to usb_cs_n
+set_location_assignment PIN_B11  -to usb_read_n
+set_location_assignment PIN_B12  -to usb_write_n
+
+set_location_assignment PIN_B15  -to usb_int
+set_location_assignment PIN_A17  -to usb_rst_n
+
+**********************************    UART   *******************************************
+
+set_location_assignment PIN_C3   -to uart_txd
+set_location_assignment PIN_F4   -to uart_rxd
+
+***************************  PS/2 keyboard and mouse ***********************************
+
+set_location_assignment PIN_F14  -to ps2_keyboard_data
+set_location_assignment PIN_E12  -to ps2_keyboard_clk
+
+set_location_assignment PIN_D15  -to ps2_mouse_data
+set_location_assignment PIN_D14  -to ps2_mouse_clk 
+
+*********************************  8位拨码开关  ****************************************
+
+set_location_assignment PIN_Y22  -to sw[0]
+set_location_assignment PIN_W21  -to sw[1]
+set_location_assignment PIN_V22  -to sw[2]
+set_location_assignment PIN_AD23 -to sw[3]
+set_location_assignment PIN_AC22 -to sw[4]
+set_location_assignment PIN_AD22 -to sw[5]
+set_location_assignment PIN_AC21 -to sw[6]
+set_location_assignment PIN_AD21 -to sw[7]
+
+***********************************  8位LED  *******************************************
+
+set_location_assignment PIN_AD16 -to led[0]
+set_location_assignment PIN_AC16 -to led[1]
+set_location_assignment PIN_AC18 -to led[2]
+set_location_assignment PIN_AD19 -to led[3]
+set_location_assignment PIN_AD17 -to led[4]
+set_location_assignment PIN_AC17 -to led[5]
+set_location_assignment PIN_AC20 -to led[6]
+set_location_assignment PIN_AC19 -to led[7]
+
+***************************  4个8位静态数码管  *****************************************
+
+set_location_assignment PIN_T4   -to seg1[7]
+set_location_assignment PIN_U3   -to seg1[6]
+set_location_assignment PIN_U4   -to seg1[5]
+set_location_assignment PIN_V3   -to seg1[4]
+set_location_assignment PIN_Y3   -to seg1[3]
+set_location_assignment PIN_W4   -to seg1[2]
+set_location_assignment PIN_W3   -to seg1[1]
+set_location_assignment PIN_V4   -to seg1[0]
+
+set_location_assignment PIN_AA4  -to seg2[7]
+set_location_assignment PIN_AA3  -to seg2[6]
+set_location_assignment PIN_H8   -to seg2[5]
+set_location_assignment PIN_U5   -to seg2[4]
+set_location_assignment PIN_AB4  -to seg2[3]
+set_location_assignment PIN_AB3  -to seg2[2]
+set_location_assignment PIN_T6   -to seg2[1]
+set_location_assignment PIN_W6   -to seg2[0]
+
+set_location_assignment PIN_J8   -to seg3[7]
+set_location_assignment PIN_J9   -to seg3[6]
+set_location_assignment PIN_U7   -to seg3[5]
+set_location_assignment PIN_T7   -to seg3[4]
+set_location_assignment PIN_U6   -to seg3[3]
+set_location_assignment PIN_V5   -to seg3[2]
+set_location_assignment PIN_V6   -to seg3[1]
+set_location_assignment PIN_V7   -to seg3[0]
+
+set_location_assignment PIN_AA6  -to seg4[7]
+set_location_assignment PIN_W10  -to seg4[6]
+set_location_assignment PIN_Y5   -to seg4[5]
+set_location_assignment PIN_AD5  -to seg4[4]
+set_location_assignment PIN_AC9  -to seg4[3]
+set_location_assignment PIN_AC8  -to seg4[2]
+set_location_assignment PIN_AC7  -to seg4[1]
+set_location_assignment PIN_AC6  -to seg4[0]
+
+******************************  外扩接口  *****************************************
+set_location_assignment PIN_AA7  -to ext_pio16[0]
+set_location_assignment PIN_AC10 -to ext_pio16[1]
+set_location_assignment PIN_AC11 -to ext_pio16[2]
+set_location_assignment PIN_AA13 -to ext_pio16[3]
+set_location_assignment PIN_AA14 -to ext_pio16[4]
+set_location_assignment PIN_AC14 -to ext_pio16[5]
+set_location_assignment PIN_AB15 -to ext_pio16[6]
+set_location_assignment PIN_AC15 -to ext_pio16[7]
+set_location_assignment PIN_V10  -to ext_pio16[8]
+set_location_assignment PIN_Y11  -to ext_pio16[9]
+set_location_assignment PIN_U17  -to ext_pio16[10]
+set_location_assignment PIN_V17  -to ext_pio16[11]
+set_location_assignment PIN_W16  -to ext_pio16[12]
+set_location_assignment PIN_Y16  -to ext_pio16[13]
+set_location_assignment PIN_W17  -to ext_pio16[14]
+set_location_assignment PIN_Y18  -to ext_pio16[15]
+
+set_location_assignment PIN_W19  -to ext_pio1
+
+set_location_assignment PIN_AC3  -to ext_pio10[0]
+set_location_assignment PIN_V9   -to ext_pio10[1]
+set_location_assignment PIN_W8   -to ext_pio10[2]
+set_location_assignment PIN_Y10  -to ext_pio10[3]
+set_location_assignment PIN_AA9  -to ext_pio10[4]
+set_location_assignment PIN_AA10 -to ext_pio10[5]
+set_location_assignment PIN_AB10 -to ext_pio10[6]
+set_location_assignment PIN_AA11 -to ext_pio10[7]
+set_location_assignment PIN_AA12 -to ext_pio10[8]
+set_location_assignment PIN_AB12  -to ext_pio10[9]

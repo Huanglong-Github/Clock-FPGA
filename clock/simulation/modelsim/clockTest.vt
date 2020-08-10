@@ -1,0 +1,78 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench template that is freely editable to  
+// suit user's needs .Comments are provided in each section to help the user    
+// fill out necessary details.                                                  
+// *****************************************************************************
+// Generated on "12/19/2019 18:51:55"
+                                                                                
+// Verilog Test Bench template for design : clockTest
+// Simulation tool : ModelSim (Verilog)
+// 
+
+`timescale 1 ns/ 1 ns
+module clockTest_vlg_tst();
+reg add_time;
+reg clk;
+reg rst_n;
+reg select_option;
+reg sw0;
+reg sw1;
+reg sw2;
+reg sw3;
+// wires                                               
+wire alarm_led;
+wire [7:0]  digital_tube_1;
+wire [7:0]  digital_tube_2;
+wire [7:0]  digital_tube_3;
+wire [7:0]  digital_tube_4;
+wire hour_led;
+wire led0;
+wire led1;                      
+clockTest i1 (
+	.add_time(add_time),
+	.alarm_led(alarm_led),
+	.clk(clk),
+	.digital_tube_1(digital_tube_1),
+	.digital_tube_2(digital_tube_2),
+	.digital_tube_3(digital_tube_3),
+	.digital_tube_4(digital_tube_4),
+	.hour_led(hour_led),
+	.led0(led0),
+	.led1(led1),
+	.rst_n(rst_n),
+	.select_option(select_option),
+	.sw0(sw0),
+	.sw1(sw1),
+	.sw2(sw2),
+	.sw3(sw3)
+);
+initial                                                
+begin                                                  
+   clk = 1'b0;
+	rst_n = 1'b0;
+	add_time = 1'b0;
+	#100 rst_n = 1'b1;
+	sw3 = 1'b1;
+	sw2 = 1'b1;
+	sw0 = 1'b0;
+	sw1 = 1'b0;
+	#100000 sw3 = 1'b0;
+	#1000000 $stop;
+end                                                    
+always #10 clk = ~clk;                                     
+endmodule
+
